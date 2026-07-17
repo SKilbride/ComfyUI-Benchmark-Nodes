@@ -1,0 +1,67 @@
+# Benchmark Package Manifest
+# Version: 1.0.0
+
+package:
+  name: Flux2-Klein-9B-NVFP4-Standard
+  version: 1.0.0
+  description: Text-to-image benchmark using Flux2 Klein 9B Base with NVFP4 precision and Qwen 3 8B FP4 text encoding
+  metadata:
+  author: skilbride
+  comfyui_version: ">=0.3.0"
+
+metadata:
+  total_size_mb: 42000
+  estimated_time: "15-30 minutes"
+  tags: [text-to-image, flux2, bf16, benchmark]
+  details: "steps: 20, resolution: 1024x1024, Diffusion precision: bf16, text_encoder precision: bf16"
+  created: "2025-01-20"
+  updated: "2025-01-20"
+
+config:
+  NUM_INSTANCES: 1
+  GENERATIONS: 10
+
+items:
+  # === WORKFLOWS (bundled in ZIP) ===
+  - name: workflow.json
+    type: workflow
+    source: bundled
+    path: workflow.json
+    required: true
+
+  # === TEXT ENCODERS ===
+  - name: Qwen3_4B
+    type: model
+    category: text_encoders
+    source: huggingface
+    repo: Comfy-Org/z_image_turbo
+    remote_path: Comfy-Org/z_image_turbo/tree/main/split_files/text_encoders
+    file: qwen_3_4b_fp8_mixed.safetensors
+    path: models/text_encoders/qwen_3_4b_fp8_mixed.safetensors
+    required: true
+    sha256: 72450b19758172c5a7273cf7de729d1c17e7f434a104a00167624cba94f68f15
+
+  # === DIFFUSION MODELS ===
+  - name: Flux2.Klein_4B_Base
+    type: model
+    category: diffusion_models
+    source: huggingface
+    repo: black-forest-labs/FLUX.2-klein-base-4b-fp8
+    remote_path: black-forest-labs/FLUX.2-klein-base-4b-fp8/tree/main
+    file: flux-2-klein-base-4b-fp8.safetensors
+    path: models/diffusion_models/flux-2-klein-base-4b-fp8.safetensors
+    required: true
+    gated: true
+    sha256: 44bab3a86fe98b85d21dd2a4729ebdc3ae51fb8a39f76e457e18c724219e6840
+
+  # === VAE ===
+  - name: flux2_vae
+    type: model
+    category: vae
+    source: huggingface
+    repo: Comfy-Org/flux2-dev
+    remote_path: Comfy-Org/flux2-dev/tree/main/split_files/vae
+    file: flux2-vae.safetensors
+    path: models/vae/flux2-vae.safetensors
+    required: true
+    sha256: d64f3a68e1cc4f9f4e29b6e0da38a0204fe9a49f2d4053f0ec1fa1ca02f9c4b5

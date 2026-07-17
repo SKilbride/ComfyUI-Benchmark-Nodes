@@ -1,0 +1,6 @@
+requests
+pyyaml
+huggingface_hub
+tqdm
+tomli; python_version < "3.11"
+pynvml

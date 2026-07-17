@@ -1,0 +1,25 @@
+{
+  "tests": [
+    {
+      "name": "LTX 2.3",
+      "base": "LTX2.3-T2V",
+      "variants": [
+        {
+          "name": "BF16",
+          "workflow": "ltx2.3-T2V-1280x720-121-BF16"
+        },
+        {
+          "name": "FP8",
+          "workflow": "ltx2.3-T2V-1280x720-121-FP8"
+        },
+        {
+          "name": "NVFP4",
+          "workflow": "ltx2.3-T2V-1280x720-121-NVFP4"
+        }
+      ],
+      "config": {
+        "generations": 1
+      }
+    }
+  ]
+}

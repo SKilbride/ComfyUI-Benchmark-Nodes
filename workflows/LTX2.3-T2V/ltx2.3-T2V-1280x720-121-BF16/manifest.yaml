@@ -1,0 +1,87 @@
+# Benchmark Package Manifest
+# Version: 1.0.0
+
+package:
+  name: LTX2.3-fp16-T2V-Benchmark
+  version: 1.0.0
+  description: LTX-2.3 22B FP16 Text-to-Video Benchmark
+  author: skilbride
+  comfyui_version: ">=0.3.0"
+
+metadata:
+  total_size_mb: 41984
+  estimated_time: "25-40 minutes"
+  tags: [text-to-video, ltx-2, nvfp4, quantized, benchmark]
+  details: "steps: 20, resolution: 1280x720, length: 121, Diffusion precision: nvfp4, text_encoder precision: BF16"
+  created: "2025-01-20"
+  updated: "2025-01-20"
+
+config:
+  NUM_INSTANCES: 1
+  GENERATIONS: 1
+
+items:
+  # === WORKFLOWS (bundled in ZIP) ===
+  - name: workflow.json
+    type: workflow
+    source: bundled
+    path: workflow.json
+    required: true
+
+  # === CUSTOM NODES ===
+  - name: comfyui-benchmark
+    type: custom_node
+    source: git
+    url: https://github.com/comfy-org/comfyui-benchmark.git
+    path: custom_nodes/comfyui-benchmark
+    required: true
+    install_requirements: true
+    description: Benchmark tracking node
+
+  # === CHECKPOINTS ===
+  - name: ltx2.3
+    type: model
+    category: checkpoints
+    source: huggingface
+    repo: Lightricks/LTX-2.3
+    remote_path: Lightricks/LTX-2.3/tree/main
+    file: ltx-2.3-22b-dev.safetensors
+    path: models/checkpoints/ltx-2.3-22b-dev.safetensors
+    required: true
+    sha256: 7ab7225325bc403448ea84b6db2269811a880e5118cd2ee2b6282a93d585016f
+
+  # === TEXT ENCODERS ===
+  - name: gemma3_12B_FP16
+    type: model
+    category: text_encoders
+    source: huggingface
+    repo: Comfy-Org/ltx-2
+    remote_path: Comfy-Org/ltx-2/tree/main/split_files/text_encoders
+    file: gemma_3_12B_it.safetensors
+    path: models/text_encoders/gemma_3_12B_it.safetensors
+    required: true
+    sha256: 56eaa964a0d9325d2dc9ecaf7759bfaf0fac78ae36c789bed6e03e275a3729ec
+
+  # === LORAS ===
+  - name: ltx2.3_distilled_lora 
+    type: model
+    category: loras
+    source: huggingface
+    repo: Lightricks/LTX-2.3
+    remote_path: Lightricks/LTX-2.3/tree/main
+    file: ltx-2.3-22b-distilled-lora-384-1.1.safetensors
+    path: models/loras/ltx-2.3-22b-distilled-lora-384-1.1.safetensors
+    required: true
+    sha256: f5d4953f3386197a4b4f5abdb17616ff256171e8075c111d6e7d2dfa6e823b3a
+
+  # === LATENT UPSCALE MODELS ===
+  - name: ltx2.3_spatial_upsampler
+    type: model
+    category: latent_upscale_models
+    source: huggingface
+    repo: Lightricks/LTX-2.3
+    remote_path: Lightricks/LTX-2.3/tree/main
+    file: ltx-2.3-spatial-upscaler-x2-1.1.safetensors
+    path: models/latent_upscale_models/ltx-2.3-spatial-upscaler-x2-1.1.safetensors
+    required: true
+    sha256: 5f416311fa8172b65af67530758964708d29a317b830d689a51143b7f91913ed
