@@ -51,7 +51,7 @@ items:
     file: flux-2-klein-base-4b-nvfp4.safetensors
     path: models/diffusion_models/flux-2-klein-base-4b-nvfp4.safetensors
     required: true
-    gated: true
+    gated: false
     sha256: f66faefe951b8eefe0ff3d4082b393fb6dc76d9a34861bd9f4ac54dc3ef381ab
 
   # === VAE ===
