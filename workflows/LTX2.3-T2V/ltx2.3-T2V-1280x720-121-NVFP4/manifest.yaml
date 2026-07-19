@@ -57,7 +57,7 @@ items:
     source: huggingface
     repo: Comfy-Org/ltx-2
     remote_path: Comfy-Org/ltx-2/tree/main/split_files/text_encoders
-    file: gemma_3_12B_it.safetensors
+    file: gemma_3_12B_it_fp4_mixed.safetensors
     path: models/text_encoders/gemma_3_12B_it_fp4_mixed.safetensors
     required: true
     sha256: aaca463d11e6d8d2a4bdb0d6299214c15ef78a3f73e0ef8113d5a9d0219b3f6d
