@@ -2,9 +2,9 @@
 # Version: 1.0.0
 
 package:
-  name: LTX2.3-fp16-T2V-Benchmark
+  name: LTX2.3-BF16-T2V-Benchmark
   version: 1.0.0
-  description: LTX-2.3 22B FP16 Text-to-Video Benchmark
+  description: LTX-2.3 22B BF16 Text-to-Video Benchmark
   author: skilbride
   comfyui_version: ">=0.3.0"
 
