@@ -2,7 +2,7 @@
 # Version: 1.0.0
 
 package:
-  name: Flux2-Klein-4B-FP16-Standard
+  name: Flux2-Klein-4B-Base-FP16
   version: 1.0.0
   description: Text-to-image benchmark using Flux2 Klein 4B Base with FP16 precision and Qwen 3 4B text encoding
   author: skilbride
@@ -50,7 +50,7 @@ items:
     file: flux-2-klein-base-4b.safetensors
     path: models/diffusion_models/flux-2-klein-base-4b.safetensors
     required: true
-    gated: false
+    gated: true
     sha256: 9c5fed22b76baea749d88fc2abe3ad53245e7b21a0d353a762665eea00043b92
 
   # === VAE ===

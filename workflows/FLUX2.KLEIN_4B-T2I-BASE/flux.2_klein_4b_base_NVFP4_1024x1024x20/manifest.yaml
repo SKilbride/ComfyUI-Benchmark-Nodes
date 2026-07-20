@@ -2,7 +2,7 @@
 # Version: 1.0.0
 
 package:
-  name: Flux2-Klein-4B-NVFP4-Standard
+  name: Flux2-Klein-4B-Base-NVFP4
   version: 1.0.0
   description: Text-to-image benchmark using Flux2 Klein 4B Base with NVFP4 precision and Qwen 3 4B FP4 text encoding
   author: skilbride
@@ -50,7 +50,7 @@ items:
     file: flux-2-klein-base-4b-nvfp4.safetensors
     path: models/diffusion_models/flux-2-klein-base-4b-nvfp4.safetensors
     required: true
-    gated: false
+    gated: true
     sha256: f66faefe951b8eefe0ff3d4082b393fb6dc76d9a34861bd9f4ac54dc3ef381ab
 
   # === VAE ===

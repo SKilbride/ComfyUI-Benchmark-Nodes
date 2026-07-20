@@ -12,7 +12,7 @@ metadata:
   total_size_mb: 41984
   estimated_time: "25-40 minutes"
   tags: [text-to-video, ltx-2, bf16, benchmark]
-  details: "steps: 20, resolution: 1280x720, length: 121, Diffusion precision: bf16, text_encoder precision: BF16"
+  details: "steps: 20, resolution: 1280x720, length: 121, Diffusion precision: bf16, text_encoder precision: bf16"
   created: "2025-01-20"
   updated: "2025-01-20"
 
